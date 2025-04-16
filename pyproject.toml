@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "squadbase-streamlit"
+version = "0.0.1"
+description = "Squadbase Python SDK for Streamlit"
+authors = ["Morph <contact@morphdb.io>"]
+readme = "README.md"
+repository = "https://github.com/squadbase/squadbase-streamlit"
+packages = [{ include = "squadbase/streamlit", from = "src" }]
+license = "Apache License 2.0"
+homepage = "https://www.morph-data.io"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.9.7 || >3.9.7,<3.13"
+streamlit = "^1.44.1"
+requests = "^2.31.0"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.15.0"
+pre-commit = "^4.2.0"
+black = "^25.1.0"
+ruff = "^0.11.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+include = '\.pyi?$'
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+lint.select = ["E", "F", "I", "W"]
+lint.ignore = []
+
+[tool.ruff.isort]
+known-first-party = ["squadbase"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
