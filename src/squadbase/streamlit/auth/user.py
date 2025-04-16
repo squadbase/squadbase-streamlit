@@ -70,6 +70,8 @@ def _get_cookies_from_headers(headers: Optional[Dict[str, str]]) -> Dict[str, st
     cookie_str = headers.get("cookie", "")
     if cookie_str:
         result["cookie"] = cookie_str
+    else:
+        _logger.warning("No authorization value found in headers.")
 
     return result
 
