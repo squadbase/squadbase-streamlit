@@ -33,10 +33,12 @@ def get_user(
     host = _get_host_from_headers(headers)
 
     if host == "localhost":
+        _logger.warning("Running on localhost, skipping squadbase authentication.")
         return {}
 
     subdomain = _extract_subdomain(host)
     if not subdomain:
+        _logger.warning("No subdomain found in host.")
         return {}
 
     cookies = _get_cookies_from_headers(headers)
