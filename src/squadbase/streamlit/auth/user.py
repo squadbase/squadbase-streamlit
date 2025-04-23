@@ -50,7 +50,7 @@ def _get_host_from_headers(headers: Optional[Dict[str, str]]) -> str:
     if not headers:
         return "localhost"
 
-    host = headers.get("host", "")
+    host = headers.get("host", "") or headers.get("Host", "")
     return host.lower() if host else "localhost"
 
 
@@ -69,7 +69,7 @@ def _get_cookies_from_headers(headers: Optional[Dict[str, str]]) -> Dict[str, st
         return {}
 
     result = {}
-    cookie_str = headers.get("cookie", "")
+    cookie_str = headers.get("cookie", "") or headers.get("Cookie", "")
     if cookie_str:
         result["cookie"] = cookie_str
     else:
@@ -84,7 +84,7 @@ def _call_auth_api(
     if custom_domain:
         url = f"https://{subdomain}.{custom_domain}/_sqcore/auth"
     else:
-        url = f"https://{subdomain}.app.morph-data.io/_sqcore/auth"
+        url = f"https://{subdomain}.app.squadbase.dev/_sqcore/auth"
 
     try:
         response = requests.post(url=url, headers=headers, timeout=10)
