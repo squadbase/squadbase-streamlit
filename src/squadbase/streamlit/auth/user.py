@@ -28,6 +28,7 @@ def get_user(
         if headers:
             headers = {key.lower(): value for key, value in headers.items()}
     except ImportError:
+        _logger.warning("Streamlit not found, using default headers.")
         headers = None
 
     host = _get_host_from_headers(headers)
