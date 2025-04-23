@@ -1,5 +1,7 @@
 # Squadbase Python SDK for Streamlit
 
+SDK for streamlit to get user credentials in deployment environment on squadbase.
+
 ## Installation
 
 ```shell
