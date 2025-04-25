@@ -85,7 +85,7 @@ def _call_auth_api(
     if custom_domain:
         url = f"https://{subdomain}.{custom_domain}/_sqcore/auth"
     else:
-        url = f"https://{subdomain}.app.squadbase.dev/_sqcore/auth"
+        url = f"https://{subdomain}.squadbase.app/_sqcore/auth"
 
     try:
         response = requests.post(url=url, headers=headers, timeout=10)
