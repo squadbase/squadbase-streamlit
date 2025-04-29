@@ -55,7 +55,7 @@ mock_user_data = {
     "lastName": "User",
     "iconUrl": None,
     "email": "test@example.com",
-    "role": ["Admin"]
+    "roles": ["Admin"]
 }
 
 # Get mock user information

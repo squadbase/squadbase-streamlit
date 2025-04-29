@@ -2,7 +2,7 @@
 name = "squadbase-streamlit"
 version = "0.0.1"
 description = "Squadbase Python SDK for Streamlit"
-authors = ["Queue-inc <contact@queue-inc.com>"]
+authors = ["squadbase <contact@morphdb.io>"]
 readme = "README.md"
 repository = "https://github.com/squadbase/squadbase-streamlit"
 packages = [{ include = "squadbase/streamlit", from = "src" }]
